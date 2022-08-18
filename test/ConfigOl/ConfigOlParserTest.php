@@ -54,12 +54,21 @@ class ConfigOlParserTest extends TestCase
      */
     public function testParsePartialConfigOl(): void
     {
+        $parser = new ConfigOlParser(__DIR__ . '/../ressource/partialconfigol.xml');
+        self::assertInstanceOf(ConfigOlParser::class, $parser);
+    }
+
+    /**
+     * Test de ParsePartialConfigOlWithoutOptional
+     */
+    public function testParsePartialConfigOlWithoutOptional(): void
+    {
         $parser = new ConfigOlParser(__DIR__ . '/../ressource/partialconfigol2.xml');
         self::assertInstanceOf(ConfigOlParser::class, $parser);
     }
 
     /**
-     * Test de ParsePartialConfigOlWithoutOptionnal
+     * Test de ParsePartialConfigOlWithoutRequired
      */
     public function testParsePartialConfigOlWithoutRequired(): void
     {
