@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<schema>
+    <Config_Schema>
+        <BaseNom></BaseNom>
+        <BaseProvider>provider</BaseProvider>
+        <BaseServeur>serveur</BaseServeur>
+        <BaseUser>user</BaseUser>
+        <BasePSW>motdepass</BasePSW>
+        <URLPLANNING></URLPLANNING>
+    </Config_Schema>
+</schema>
