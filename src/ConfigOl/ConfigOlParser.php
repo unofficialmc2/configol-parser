@@ -42,10 +42,10 @@ class ConfigOlParser
     }
 
     /**
-     * parse le fichier xml et stock le résultat dans schemas
+     * Parse le fichier xml et stock le résultat dans schemas
      * @return void
      */
-    private function parse(): void
+    protected function parse(): void
     {
         $strXml = file_get_contents($this->file);
         if (empty($strXml)) {
@@ -71,7 +71,7 @@ class ConfigOlParser
      * @param array<string,mixed> $xml
      * @return ConfigOL
      */
-    private function xmlToData(array $xml): ConfigOL
+    protected function xmlToData(array $xml): ConfigOL
     {
         if (!isset($xml['BaseServeur'], $xml['BaseUser'], $xml['BasePSW'])) {
             throw new BadConfigOl($this->file, "Information requise absente");
@@ -97,7 +97,7 @@ class ConfigOlParser
     }
 
     /**
-     * retourne les éléments de connexion d'un schéma.
+     * Retourne les éléments de connexion d'un schéma.
      * Si ces derniers n'existe pas non plus, une exception est levée.
      * @param string $schema
      * @return ConfigOL

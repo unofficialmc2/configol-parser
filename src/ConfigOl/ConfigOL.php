@@ -25,7 +25,6 @@ class ConfigOL
         readonly public string $baseUser = '',
         readonly public string $basePsw = '',
         readonly public string $urlPlanning = ''
-    )
-    {
+    ) {
     }
 }
