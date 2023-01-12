@@ -8,14 +8,6 @@ namespace ConfigOl;
  */
 class ConfigOL
 {
-
-    public string $baseNom;
-    public string $baseProvider;
-    public string $baseServeur;
-    public string $baseUser;
-    public string $basePsw;
-    public string $urlPlanning;
-
     /**
      * constructeur
      *
@@ -27,18 +19,13 @@ class ConfigOL
      * @param string $urlPlanning
      */
     public function __construct(
-        string $baseNom = '',
-        string $baseProvider = '',
-        string $baseServeur = '',
-        string $baseUser = '',
-        string $basePsw = '',
-        string $urlPlanning = ''
-    ) {
-        $this->baseNom = $baseNom;
-        $this->baseProvider = $baseProvider;
-        $this->baseServeur = $baseServeur;
-        $this->baseUser = $baseUser;
-        $this->basePsw = $basePsw;
-        $this->urlPlanning = $urlPlanning;
+        readonly public string $baseNom = '',
+        readonly public string $baseProvider = '',
+        readonly public string $baseServeur = '',
+        readonly public string $baseUser = '',
+        readonly public string $basePsw = '',
+        readonly public string $urlPlanning = ''
+    )
+    {
     }
 }
