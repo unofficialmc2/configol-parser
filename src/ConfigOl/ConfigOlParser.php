@@ -79,9 +79,9 @@ class ConfigOlParser
         return new ConfigOL(
             (string)($xml['BaseNom'] ?? ""),
             (string)($xml['BaseProvider'] ?? ""),
-            (string)($xml['BaseServeur'] ?? ""),
-            (string)($xml['BaseUser'] ?? ""),
-            (string)($xml['BasePSW'] ?? ""),
+            (string)($xml['BaseServeur']),
+            (string)($xml['BaseUser']),
+            (string)($xml['BasePSW']),
             (string)($xml['URLPLANNING'] ?? "")
         );
     }
