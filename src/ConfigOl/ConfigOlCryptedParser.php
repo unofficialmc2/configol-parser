@@ -72,7 +72,7 @@ class ConfigOlCryptedParser extends ConfigOlParser
         if ($result === false) {
             throw new RuntimeException("Impossible de décrypter un mot de passe du config OL");
         }
-        return utf8_encode(rtrim($result, "\0"));
+        return mb_convert_encoding(rtrim($result, "\0"), 'UTF-8', 'ISO-8859-1');
     }
 
     /**
