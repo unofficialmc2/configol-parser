@@ -35,15 +35,15 @@ class ConfigOlCryptedParser extends ConfigOlParser
             throw new BadConfigOl($this->file, "Information requise absente");
         }
         $isCrypted = (bool)($xml['BaseCrypte'] ?? false);
-        $password = (string)($xml['BasePSW'] ?? "");
+        $password = (string)$xml['BasePSW'];
         if ($isCrypted) {
             $password = $this->decode($password);
         }
         return new ConfigOL(
             (string)($xml['BaseNom'] ?? ""),
             (string)($xml['BaseProvider'] ?? ""),
-            (string)($xml['BaseServeur'] ?? ""),
-            (string)($xml['BaseUser'] ?? ""),
+            (string)$xml['BaseServeur'],
+            (string)$xml['BaseUser'],
             $password,
             (string)($xml['URLPLANNING'] ?? "")
         );

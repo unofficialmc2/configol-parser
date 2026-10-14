@@ -51,12 +51,16 @@ class ConfigOlParser
         if (empty($strXml)) {
             throw new BadConfigOl($this->file);
         }
+        $previousUseErrors = libxml_use_internal_errors(true);
         try {
             $xml = simplexml_load_string($strXml);
-            if ($xml === false) {
-                throw new BadConfigOl($this->file);
-            }
         } catch (\Exception $e) {
+            throw new BadConfigOl($this->file);
+        } finally {
+            libxml_clear_errors();
+            libxml_use_internal_errors($previousUseErrors);
+        }
+        if ($xml === false) {
             throw new BadConfigOl($this->file);
         }
         foreach ($xml as $schema => $data) {
